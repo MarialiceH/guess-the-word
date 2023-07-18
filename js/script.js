@@ -6,17 +6,19 @@ const remainingGuess = document.querySelector(".remaining");
 const remainingDisplay = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again")
+
 const word = "magnolia";
 
-const updateProgress = function (word) {
+const placeholder = function (word) {
     const placeholderLetters = [];
     for (const letter of word) {
         console.log(letter);
         placeholderLetters.push("●");
     }
+    wordProgress.innerText = placeholderLetters.join("");
 };
 
-updateProgress(word);
+placeholder(word);
 
 guessButton.addEventListener("click", function (e) {
     e.preventDefault();
