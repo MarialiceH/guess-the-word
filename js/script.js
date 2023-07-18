@@ -101,5 +101,21 @@ const checkIfWin = function () {
     }
 };
 
+//declare a global varialbe for the number of guesses
+const remainingGuesses = 8;
+
+//create a function to count remaining guesses
+const countRemainingGuesses = function (guess) {
+    const upperWord = word.toUpperCase()
+    if (!upperWord.includes(guess)) {
+        //let the player know that the word doesn't contain the letter
+        message.innerText = `Sorry, the word has no ${guess}.`
+        remainingGuesses -= 1;  
+    } else {
+        message.innerText = `Good guess! The word has the letter ${guess}`
+    }
+    
+}
+
 
 
